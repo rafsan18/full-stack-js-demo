@@ -5,18 +5,43 @@ class Application extends Component {
         super();
 
         this.state = {
-            count: 0,
+            grossCount: 0,
+            incrementCount: 0,
+            decrementCount: 0,
         };
     }
-    handleClick = () => {
-        console.log("object");
+
+    handleIncrement = () => {
+        this.setState({
+            grossCount: this.state.grossCount + 1,
+            incrementCount: this.state.incrementCount + 1,
+        });
     };
+
+    handleDecrement = () => {
+        this.setState({
+            grossCount: this.state.grossCount - 1,
+            decrementCount: this.state.decrementCount + 1,
+        });
+    };
+
     render() {
-        let { count } = this.state;
+        let { grossCount, incrementCount, decrementCount } = this.state;
         return (
             <div>
-                <h1>You Clicked the Button-1: {count} times</h1>
-                <button onClick={() => this.handleClick()}>button-1</button>
+                <h1>This is Class component</h1>
+
+                <h2>You Click: {grossCount} times</h2>
+                <h3>Increment Count: {incrementCount}</h3>
+                <h3>Decrement Count: {decrementCount}</h3>
+
+                <button onClick={() => this.handleIncrement()}>
+                    Increment
+                </button>
+
+                <button onClick={() => this.handleDecrement()}>
+                    Decrement
+                </button>
             </div>
         );
     }
