@@ -2,34 +2,21 @@ import React, { Component } from "react";
 
 class Application extends Component {
     constructor(props) {
-        super(props);
-    }
+        super();
 
-    componentWillMount(props, state) {
-        console.log("Component will mount", props, state);
+        this.state = {
+            count: 0,
+        };
     }
-
-    componentDidMount(props, state) {
-        console.log("Mounted with", props, state);
-    }
-
-    componentWillReceiveProps(props) {
-        console.log("Component will receive props", props);
-    }
-
-    componentWillUpdate(props, state) {
-        console.log("component will update", props, state);
-    }
+    handleClick = () => {
+        console.log("object");
+    };
     render() {
-        let name = "John";
+        let { count } = this.state;
         return (
             <div>
-                <h1>Hello {name}!!</h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Odio dolores qui excepturi magnam consectetur blanditiis
-                    doloremque praesentium distinctio iusto in?
-                </p>
+                <h1>You Clicked the Button-1: {count} times</h1>
+                <button onClick={() => this.handleClick()}>button-1</button>
             </div>
         );
     }
