@@ -24,21 +24,17 @@ class Application extends Component {
             decrementCount: this.state.decrementCount + 1,
         });
     };
-
     render() {
         let { grossCount, incrementCount, decrementCount } = this.state;
         return (
             <div>
-                <h1>This is Class component</h1>
-
-                <h2>You Click: {grossCount} times</h2>
-                <h3>Increment Count: {incrementCount}</h3>
-                <h3>Decrement Count: {decrementCount}</h3>
-
+                <h1>This is Class Component</h1>
+                <h2>You Clicked: {grossCount} </h2>
+                <h3>Increment Count: {incrementCount} </h3>
+                <h3>Decrement Count: {decrementCount} </h3>
                 <button onClick={() => this.handleIncrement()}>
                     Increment
                 </button>
-
                 <button onClick={() => this.handleDecrement()}>
                     Decrement
                 </button>
